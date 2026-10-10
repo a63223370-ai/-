@@ -1,5 +1,5 @@
-import {Mark} from './BrandArt';
+import {Mark,Wordmark} from './BrandArt';
 import { ArrowDown,Circle,Network,MessagesSquare,Users,Compass,Leaf,Hand,AudioLines,Box,Palette,Sparkles,ArrowUpRight,ArrowRight,ArrowLeft,Check,ChevronDown,Download,Share2,LockKeyhole,Clock3,BriefcaseBusiness,Target,Layers3,MoveUpRight,Copy,Link2,Plus,X,RefreshCw,ShieldCheck,Menu,FileImage,Printer,CheckCheck,CircleHelp,ExternalLink,LoaderCircle,Send,LogOut,Trash2,ScanLine } from 'lucide-react';
 const map={ArrowDown,Circle,Network,MessagesSquare,Users,Compass,Leaf,Hand,AudioLines,Box,Palette,Sparkles,ArrowUpRight,ArrowRight,ArrowLeft,Check,ChevronDown,Download,Share2,LockKeyhole,Clock3,BriefcaseBusiness,Target,Layers3,MoveUpRight,Copy,Link2,Plus,X,RefreshCw,ShieldCheck,Menu,FileImage,Printer,CheckCheck,CircleHelp,ExternalLink,LoaderCircle,Send,LogOut,Trash2,ScanLine};
 export function Icon({name,size=20,...props}:{name:string;size?:number;className?:string;strokeWidth?:number}){const Component=map[name as keyof typeof map]||Compass;return <Component size={size} strokeWidth={1.7} aria-hidden="true" {...props}/>;}
-export function Brand(){return <div className="brand" aria-label="另面 OTHER SIDE"><Mark/><span>另面<small>OTHER SIDE</small></span></div>;}
+export function Brand(){return <div className="brand" aria-label="另面 OTHER SIDE"><Mark/><Wordmark/></div>;}
