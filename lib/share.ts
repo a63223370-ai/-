@@ -1,37 +1,16 @@
-import { dimensions,names,Report,readingFor } from './engine';
-
-function wrap(ctx:CanvasRenderingContext2D,text:string,x:number,y:number,width:number,lineHeight:number,maxLines=6){let line='',lines=0;for(const char of text){if(ctx.measureText(line+char).width>width&&line){ctx.fillText(line,x,y+lines*lineHeight);lines++;line='';if(lines>=maxLines)return y+lines*lineHeight;}line+=char;}if(line){ctx.fillText(line,x,y+lines*lineHeight);lines++;}return y+lines*lineHeight;}
-function rounded(ctx:CanvasRenderingContext2D,x:number,y:number,w:number,h:number,r:number,fill:string){ctx.fillStyle=fill;ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill();}
-export async function shareCard(report:Report):Promise<Blob>{
-  const canvas=document.createElement('canvas');canvas.width=1080;canvas.height=1600;
-  const c=canvas.getContext('2d')!;c.fillStyle='#f6f3ed';c.fillRect(0,0,1080,1600);
-  c.fillStyle='#102f45';c.fillRect(0,0,1080,460);
-  c.strokeStyle='#ffffff12';c.lineWidth=1;for(let r=90;r<=470;r+=75){c.beginPath();c.arc(1000,60,r,0,Math.PI*2);c.stroke();}
-  c.fillStyle='#eeb492';c.font='20px Arial';c.fillText('POTENTIAL COORDINATES  /  个人探索报告',70,78);
-  c.fillStyle='#ffffffb3';c.font='28px Microsoft YaHei, sans-serif';c.fillText(report.nickname+' 的潜能坐标',70,145);
-  c.fillStyle='#fff';c.font='bold 70px Microsoft YaHei, sans-serif';c.fillText(report.name,65,245);
-  c.fillStyle='#ffffffc0';c.font='28px Microsoft YaHei, sans-serif';
-  const reading=readingFor(report);wrap(c,reading.summary,70,310,900,44,3);
-  rounded(c,45,495,990,640,24,'#ffffff');c.fillStyle='#102f45';c.font='bold 30px Microsoft YaHei, sans-serif';c.fillText('我的十维图谱',80,555);
-  c.fillStyle='#7c898d';c.font='20px Microsoft YaHei, sans-serif';c.fillText('本次自评 · 5—25分',760,553);
-  const cx=540,cy=835,radius=190;
-  for(let ring=1;ring<=5;ring++){c.beginPath();for(let i=0;i<10;i++){const a=-Math.PI/2+i*Math.PI/5,x=cx+Math.cos(a)*radius*ring/5,y=cy+Math.sin(a)*radius*ring/5;if(i)c.lineTo(x,y);else c.moveTo(x,y);}c.closePath();c.strokeStyle='#dfe7e7';c.lineWidth=1.5;c.stroke();}
-  dimensions.forEach((d,i)=>{const a=-Math.PI/2+i*Math.PI/5;c.beginPath();c.moveTo(cx,cy);c.lineTo(cx+Math.cos(a)*radius,cy+Math.sin(a)*radius);c.strokeStyle='#e1e7e7';c.stroke();c.textAlign='center';c.font='23px Microsoft YaHei, sans-serif';c.fillStyle='#4b626b';const x=cx+Math.cos(a)*(radius+82),y=cy+Math.sin(a)*(radius+65);c.fillText(d.name,x,y);c.fillStyle='#16746f';c.font='bold 24px Arial';c.fillText(String(report.scores[d.id]),x,y+30);});
-  c.beginPath();dimensions.forEach((d,i)=>{const a=-Math.PI/2+i*Math.PI/5,r=radius*((report.scores[d.id]-5)/20),x=cx+Math.cos(a)*r,y=cy+Math.sin(a)*r;if(i)c.lineTo(x,y);else c.moveTo(x,y);});c.closePath();c.fillStyle='#16746f26';c.fill();c.strokeStyle='#16746f';c.lineWidth=4;c.stroke();
-  c.textAlign='left';c.font='bold 27px Microsoft YaHei, sans-serif';c.fillStyle='#102f45';c.fillText(report.mode==='uniform'?'我的下一步：先尝试，再定义':'值得优先探索的三条线索',70,1200);
-  if(report.mode!=='uniform')report.ranked.slice(0,3).forEach((d,i)=>{const x=60+i*325;rounded(c,x,1235,310,115,16,i===0?'#e9efeb':'#fff');c.fillStyle='#16746f';c.font='18px Arial';c.fillText('0'+(i+1),x+20,1267);c.fillStyle='#102f45';c.font='bold 28px Microsoft YaHei, sans-serif';c.fillText(names[d],x+20,1307);c.font='23px Arial';c.fillText(report.scores[d]+'/25',x+198,1307);});
-  else{c.font='27px Microsoft YaHei, sans-serif';c.fillStyle='#40546a';wrap(c,'这次回答的方向尚未拉开，先完成两个感兴趣的小任务，为自己积累更具体的证据。',70,1250,930,44,3);}
-  c.fillStyle='#687b80';c.font='22px Microsoft YaHei, sans-serif';wrap(c,report.mode==='regular'?'每个人都有不同的发挥方式。让真实尝试，成为下一步的坐标。':reading.summary,70,1410,930,33,2);
-  c.strokeStyle='#d8dfda';c.beginPath();c.moveTo(70,1498);c.lineTo(1010,1498);c.stroke();c.font='18px Arial';c.fillStyle='#7c898d';c.fillText(report.id+'  ·  '+new Date(report.createdAt).toLocaleDateString('zh-CN',{timeZone:'Asia/Shanghai'}),70,1536);
-  c.font='16px Microsoft YaHei, sans-serif';c.fillText('兴趣与行为自评探索 · 非实际能力认证 · 潜能坐标',70,1570);
-  return new Promise((resolve,reject)=>canvas.toBlob(b=>b?resolve(b):reject(new Error('图片生成失败，请重试。')),'image/png'));
+import {dimensions,names,Report,readingFor} from './engine';
+function wrap(c:CanvasRenderingContext2D,text:string,x:number,y:number,width:number,lineHeight:number,maxLines=4){let line='',n=0;for(const char of text){if(c.measureText(line+char).width>width&&line){c.fillText(line,x,y+n*lineHeight);n++;line='';if(n>=maxLines)return;}line+=char;}if(line)c.fillText(line,x,y+n*lineHeight);}
+function mark(c:CanvasRenderingContext2D,x:number,y:number,scale:number,bg:string,color:string){c.save();c.translate(x,y);c.scale(scale,scale);c.strokeStyle=color;c.lineWidth=28;c.lineCap='butt';c.lineJoin='round';c.stroke(new Path2D('M78 91C64 108 44 108 31 95C17 81 17 60 31 46C45 32 62 33 77 46L159 99C174 110 194 108 207 94C221 80 221 59 207 45C193 31 175 32 160 46'));c.fillStyle=bg;c.beginPath();c.arc(151,39,20,0,Math.PI*2);c.fill();c.fillStyle='#ff965b';c.beginPath();c.arc(151,39,13,0,Math.PI*2);c.fill();c.restore();}
+export async function shareCard(report:Report):Promise<Blob>{await document.fonts.ready;const canvas=document.createElement('canvas');canvas.width=1080;canvas.height=1600;const c=canvas.getContext('2d')!;
+ c.fillStyle='#fff';c.fillRect(0,0,1080,1600);c.fillStyle='#0755ff';c.fillRect(0,0,1080,510);mark(c,20,-30,4.5,'#0755ff','#fff');
+ c.fillStyle='#fff';c.beginPath();c.roundRect(0,465,1080,1135,[45,45,0,0]);c.fill();mark(c,65,500,.5,'#fff','#0755ff');c.fillStyle='#171a20';c.font='bold 30px Microsoft YaHei, sans-serif';c.fillText('另面',195,542);c.font='11px Arial';c.fillText('OTHER SIDE',196,563);
+ c.fillStyle='#8b96aa';c.font='25px Microsoft YaHei, sans-serif';c.fillText(report.nickname+' 的探索报告',70,650);c.fillStyle='#171a20';c.font='bold 74px Microsoft YaHei, sans-serif';wrap(c,report.name,65,760,950,90,2);
+ c.font='27px Microsoft YaHei, sans-serif';c.fillStyle='#7b8598';const reading=readingFor(report);wrap(c,report.mode==='regular'?reading.pair.reading_headline:'关于你，还有未展开的部分。',70,925,920,44,2);
+ if(report.mode!=='uniform'){report.ranked.slice(0,3).forEach((id,i)=>{const x=70+i*330;c.fillStyle='#8e9bb3';c.font='24px Microsoft YaHei, sans-serif';c.fillText(names[id],x,1060);c.fillStyle='#0755ff';c.font='bold 46px Arial';c.fillText(String(report.scores[id]),x,1125);c.fillStyle='#a5aec0';c.font='25px Arial';c.fillText('/25',x+60,1125);});}
+ else{c.font='26px Microsoft YaHei, sans-serif';c.fillStyle='#7b8598';wrap(c,'不急着定义自己，先为可能性留一扇门。',70,1060,930,45,2);}
+ const cx=235,cy=1310,r=115;for(let ring=1;ring<=4;ring++){c.beginPath();for(let i=0;i<10;i++){const a=-Math.PI/2+i*Math.PI/5,x=cx+Math.cos(a)*r*ring/4,y=cy+Math.sin(a)*r*ring/4;i?c.lineTo(x,y):c.moveTo(x,y);}c.closePath();c.strokeStyle='#e1eaff';c.lineWidth=1.5;c.stroke();}c.beginPath();dimensions.forEach((d,i)=>{const a=-Math.PI/2+i*Math.PI/5,rad=r*(report.scores[d.id]-5)/20,x=cx+Math.cos(a)*rad,y=cy+Math.sin(a)*rad;i?c.lineTo(x,y):c.moveTo(x,y);});c.closePath();c.fillStyle='#0755ff18';c.fill();c.strokeStyle='#0755ff';c.lineWidth=3;c.stroke();
+ c.fillStyle='#171a20';c.font='bold 29px Microsoft YaHei, sans-serif';c.fillText('你，始终有另面。',445,1290);c.fillStyle='#9aa5ba';c.font='21px Microsoft YaHei, sans-serif';c.fillText('十维自评图谱 · 每维5—25分',445,1340);c.fillText('让一次真实尝试，成为新的开始。',445,1380);
+ c.strokeStyle='#e8ecf3';c.beginPath();c.moveTo(70,1490);c.lineTo(1010,1490);c.stroke();c.fillStyle='#a4adbf';c.font='17px Arial';c.fillText(report.id+'  /  '+new Date(report.createdAt).toLocaleDateString('zh-CN',{timeZone:'Asia/Shanghai'}),70,1530);c.font='17px Microsoft YaHei, sans-serif';c.fillText('自我探索参考 · 非实际能力认证',70,1565);
+ return new Promise((resolve,reject)=>canvas.toBlob(b=>b?resolve(b):reject(Error('图片生成失败，请重试。')),'image/png'));
 }
-export async function reportImage(node:HTMLElement){
-  await document.fonts.ready;
-  const {toBlob}=await import('html-to-image');
-  const details=Array.from(node.querySelectorAll('details'));const opened=details.map(d=>d.open);details.forEach(d=>d.open=true);
-  try{const blob=await toBlob(node,{backgroundColor:'#f6f3ed',pixelRatio:node.scrollHeight>10000?1:1.5,cacheBust:false,
-    filter:n=>!(n instanceof HTMLElement&&n.classList.contains('no-export'))});
-  if(!blob)throw new Error('长图未能生成，可使用打印功能保存PDF。');return blob;
-  }finally{details.forEach((d,i)=>d.open=opened[i]);}
-}
+export async function reportImage(node:HTMLElement){await document.fonts.ready;const {toBlob}=await import('html-to-image');const details=Array.from(node.querySelectorAll('details')),opened=details.map(d=>d.open);details.forEach(d=>d.open=true);await new Promise<void>(r=>requestAnimationFrame(()=>requestAnimationFrame(()=>r())));try{const blob=await toBlob(node,{backgroundColor:'#fff',pixelRatio:node.scrollHeight>10000?1:1.5,filter:n=>!(n instanceof HTMLElement&&n.classList.contains('no-export'))});if(!blob)throw Error('长图未能生成，请使用打印功能保存PDF。');return blob;}finally{details.forEach((d,i)=>d.open=opened[i]);}}

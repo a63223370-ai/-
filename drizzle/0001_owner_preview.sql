@@ -1,0 +1,3 @@
+INSERT OR IGNORE INTO invitations (token,created_at) VALUES ('572b3744ef740145806968da49b064bbd65e24c6285701e3b778bd1d386923a9',1791621730655);
+--> statement-breakpoint
+INSERT OR IGNORE INTO invitations (token,created_at) VALUES ('4ed9d0f4edbfede518093f0106327f18f21f598f43b1fb3f8cc736f0016f22a3',1791621730655);
