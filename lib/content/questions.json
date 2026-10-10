@@ -1,0 +1,576 @@
+{
+  "version": "3.0.0",
+  "instructions": "请按过去半年实际发生过的情况作答，不按理想中的自己选择。想象一下题目中的场景：这种反应像不像平时的你？不要求有相关职业经历。暂时没有接触过某类场景时，可以选择“一般／暂不确定”；结果会保留这种不确定性。所有选项都可以，没有需要争取的高分。",
+  "options": [
+    {
+      "value": 1,
+      "label": "非常不符合"
+    },
+    {
+      "value": 2,
+      "label": "不太符合"
+    },
+    {
+      "value": 3,
+      "label": "一般／暂不确定"
+    },
+    {
+      "value": 4,
+      "label": "比较符合"
+    },
+    {
+      "value": 5,
+      "label": "非常符合"
+    }
+  ],
+  "dimensions": [
+    {
+      "id": "reason",
+      "name": "结构推演"
+    },
+    {
+      "id": "language",
+      "name": "表达建构"
+    },
+    {
+      "id": "people",
+      "name": "关系洞察"
+    },
+    {
+      "id": "self",
+      "name": "自我导航"
+    },
+    {
+      "id": "nature",
+      "name": "生态觉察"
+    },
+    {
+      "id": "action",
+      "name": "实践协调"
+    },
+    {
+      "id": "sound",
+      "name": "声律敏感"
+    },
+    {
+      "id": "space",
+      "name": "空间组织"
+    },
+    {
+      "id": "visual",
+      "name": "视觉辨识"
+    },
+    {
+      "id": "create",
+      "name": "可能性生成"
+    }
+  ],
+  "questions": [
+    {
+      "id": "reason_01",
+      "position": 1,
+      "dimension": "reason",
+      "text": "比较两个方案时，我会先把它们各自成立的条件列出来。",
+      "reverse": false,
+      "facet": "条件比较",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "从“能找出关键环节”改为比较条件这一可回想的动作。"
+    },
+    {
+      "id": "language_01",
+      "position": 2,
+      "dimension": "language",
+      "text": "转述一段较长的消息时，我会先用一句话说清它主要想表达什么。",
+      "reverse": false,
+      "facet": "主线提炼",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "限定为语言主线，而不是理解事实关系。"
+    },
+    {
+      "id": "people_01",
+      "position": 3,
+      "dimension": "people",
+      "text": "一起做事却意见不一致时，我会先分别问大家最想保住的是什么。",
+      "reverse": false,
+      "facet": "期待确认",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "确认他人优先项，而不是判断对方情绪或评价善良。"
+    },
+    {
+      "id": "self_01",
+      "position": 4,
+      "dimension": "self",
+      "text": "答应一件事之前，我会分清自己是确实想做，还是主要担心让别人失望。",
+      "reverse": false,
+      "facet": "动力辨认",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "只关注自身动机，不把对他人的体谅算进此维。"
+    },
+    {
+      "id": "nature_01",
+      "position": 5,
+      "dimension": "nature",
+      "text": "走过同一段有植物的路时，我会留意叶片、花或果实与上次相比有什么变化。",
+      "reverse": false,
+      "facet": "持续观察",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "用可接触场景观察连续变化，不测喜欢户外程度。"
+    },
+    {
+      "id": "action_01",
+      "position": 6,
+      "dimension": "action",
+      "text": "照着说明完成一个简单手工或装配时，我会通过亲手试一次确认自己哪里还不熟。",
+      "reverse": false,
+      "facet": "操作反馈",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "从一般实践意愿收窄到动作操作反馈。"
+    },
+    {
+      "id": "sound_01",
+      "position": 7,
+      "dimension": "sound",
+      "text": "听一段熟悉的音乐时，我会注意到节拍或停顿在哪里发生变化。",
+      "reverse": false,
+      "facet": "节奏注意",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "限定听觉节奏，不混入一般情绪敏感。"
+    },
+    {
+      "id": "space_01",
+      "position": 8,
+      "dimension": "space",
+      "text": "看一个简单物体时，我会在脑中想象它转过方向后，哪些部分会被挡住。",
+      "reverse": false,
+      "facet": "旋转想象",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "明确空间旋转，不与平面视觉美感混合。"
+    },
+    {
+      "id": "visual_01",
+      "position": 9,
+      "dimension": "visual",
+      "text": "看一页图文时，我会注意自己先看到了什么，以及它是被什么突出出来的。",
+      "reverse": false,
+      "facet": "视觉层级",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "关注平面注意顺序，不混入空间动线。"
+    },
+    {
+      "id": "create_01",
+      "position": 10,
+      "dimension": "create",
+      "text": "一个常用办法行不通时，我会先想一个路线不同的做法，而不是只微调原办法。",
+      "reverse": false,
+      "facet": "替代路径",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "突出替代路径，与逐项排查区分；不暗示另一种方式较差。"
+    },
+    {
+      "id": "reason_02",
+      "position": 11,
+      "dimension": "reason",
+      "text": "听到“只要这样做就会成功”的说法时，我会想到哪些情况可能不适用。",
+      "reverse": false,
+      "facet": "反例检验",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "用具体说法引出例外判断，减少“我逻辑很好”的自评。"
+    },
+    {
+      "id": "language_02",
+      "position": 12,
+      "dimension": "language",
+      "text": "讲一件经过复杂的事时，我会先想清楚从哪里讲起，听的人才容易跟上。",
+      "reverse": false,
+      "facet": "表达组织",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "关注叙述顺序，不推断外向或即兴口才。"
+    },
+    {
+      "id": "people_02",
+      "position": 13,
+      "dimension": "people",
+      "text": "别人向我说烦心事时，我会先问他想让我听一听，还是一起想办法。",
+      "reverse": false,
+      "facet": "需要核对",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "把“我能分清”改为可观察的核对行为，避免读心推断。"
+    },
+    {
+      "id": "self_02",
+      "position": 14,
+      "dimension": "self",
+      "text": "感到很累却说不清原因时，我会回想当天哪一段经历最消耗自己。",
+      "reverse": false,
+      "facet": "状态辨认",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "关注自身状态来源，不将因果排查能力泛化到此维。"
+    },
+    {
+      "id": "nature_02",
+      "position": 15,
+      "dimension": "nature",
+      "text": "看到两株相似的植物时，我会比较叶形或生长位置，看看它们有什么不同。",
+      "reverse": false,
+      "facet": "形态辨认",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "具体到自然形态差异，不扩展到所有视觉审美。"
+    },
+    {
+      "id": "action_02",
+      "position": 16,
+      "dimension": "action",
+      "text": "重复做一个动作时，我会留意手的位置或用力方式改变后，结果有什么不同。",
+      "reverse": false,
+      "facet": "动作调整",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "聚焦动作控制感受，不把排查逻辑当协调能力。"
+    },
+    {
+      "id": "sound_02",
+      "position": 17,
+      "dimension": "sound",
+      "text": "同一句话由不同声音说出来时，我会注意到声音质感带来的区别。",
+      "reverse": false,
+      "facet": "音色辨别",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "聚焦音色体验，不推断人际理解。"
+    },
+    {
+      "id": "space_02",
+      "position": 18,
+      "dimension": "space",
+      "text": "看简单的平面示意图时，我会在脑中把图上的位置对应到实际空间。",
+      "reverse": false,
+      "facet": "图物对应",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "图物映射，不测试读图专业知识或语言表达。"
+    },
+    {
+      "id": "visual_02",
+      "position": 19,
+      "dimension": "visual",
+      "text": "同一段内容换了配色后，我会留意它给人的整体感觉有什么变化。",
+      "reverse": false,
+      "facet": "配色感受",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "聚焦视觉风格差异，不要求专业术语或制作经验。"
+    },
+    {
+      "id": "create_02",
+      "position": 20,
+      "dimension": "create",
+      "text": "接触一个不熟悉的东西时，我会想到它能不能用来解决另一个领域的小问题。",
+      "reverse": false,
+      "facet": "跨域连接",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "限定跨领域迁移，不将所有联想算作创新。"
+    },
+    {
+      "id": "reason_03",
+      "position": 21,
+      "dimension": "reason",
+      "text": "一件事前后发生了变化，我会先核对还有哪些条件同时改变，再判断原因。",
+      "reverse": false,
+      "facet": "因果追问",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "区分因果检查与关注变化本身。"
+    },
+    {
+      "id": "language_03",
+      "position": 22,
+      "dimension": "language",
+      "text": "向不熟悉某个话题的人解释时，我会换掉他可能不懂的词。",
+      "reverse": false,
+      "facet": "对象转换",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "将理解他人需要与表达转换分开，只测措辞调整。"
+    },
+    {
+      "id": "people_03",
+      "position": 23,
+      "dimension": "people",
+      "text": "两个人对同一件事反应不同，我会先了解他们各自经历了什么。",
+      "reverse": false,
+      "facet": "立场辨别",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "聚焦人的背景，不混入一般因果能力。"
+    },
+    {
+      "id": "self_03",
+      "position": 24,
+      "dimension": "self",
+      "text": "连续几次学习或做事后，我会比较自己在哪种安排下更容易投入。",
+      "reverse": false,
+      "facet": "节奏复盘",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "聚焦自身适配条件，不以效率高低评价能力。"
+    },
+    {
+      "id": "nature_03",
+      "position": 25,
+      "dimension": "nature",
+      "text": "看到同一种植物在不同位置长势不同，我会留意两处的光照或湿润程度。",
+      "reverse": false,
+      "facet": "环境联系",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "仅限生命与环境条件的联系，不声称专业生态判断。"
+    },
+    {
+      "id": "action_03",
+      "position": 26,
+      "dimension": "action",
+      "text": "一个操作动作接不上时，我会先单独练其中不顺的那一小段。",
+      "reverse": false,
+      "facet": "分段练习",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "动作练习与一般坚持品质分开。"
+    },
+    {
+      "id": "sound_03",
+      "position": 27,
+      "dimension": "sound",
+      "text": "一小段旋律听过几遍后，我会在没有播放时想起它的大致走向。",
+      "reverse": false,
+      "facet": "旋律记忆",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "从喜好转到可回想的听觉记忆，但仍是自评。"
+    },
+    {
+      "id": "space_03",
+      "position": 28,
+      "dimension": "space",
+      "text": "安排几件物品的位置前，我会先在脑中走一遍取用它们的路线。",
+      "reverse": false,
+      "facet": "路径预演",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "只关注空间移动，不将任务流程归入此维。"
+    },
+    {
+      "id": "visual_03",
+      "position": 29,
+      "dimension": "visual",
+      "text": "两页内容一样但排版不同的材料放在一起时，我会比较哪一页更容易找到重点。",
+      "reverse": false,
+      "facet": "排版辨识",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "排版阅读体验，不以识别事实主线计分。"
+    },
+    {
+      "id": "create_03",
+      "position": 30,
+      "dimension": "create",
+      "text": "遇到没有固定答案的任务时，我会先写出几种做法，再决定用哪一种。",
+      "reverse": false,
+      "facet": "多案生成",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "观察方案生成，不把最终合理性或美感计入此维。"
+    },
+    {
+      "id": "reason_04",
+      "position": 31,
+      "dimension": "reason",
+      "text": "熟悉的做法突然不奏效时，我会一次只改一个条件，看看结果怎样变化。",
+      "reverse": false,
+      "facet": "逐项排查",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "限定为熟悉问题的排查，不等同于动手技能或生成新方法。"
+    },
+    {
+      "id": "language_04",
+      "position": 32,
+      "dimension": "language",
+      "text": "发出重要消息前，我会重读一遍，改掉可能被理解成另一种意思的句子。",
+      "reverse": false,
+      "facet": "歧义修订",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "用明确修订动作替代笼统的“让意思更准确”。"
+    },
+    {
+      "id": "people_04",
+      "position": 33,
+      "dimension": "people",
+      "text": "一项合作反复沟通仍不顺时，我会问双方对“做到什么程度”的理解是否一致。",
+      "reverse": false,
+      "facet": "合作澄清",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "关注合作期待，不将流程优化直接算作关系洞察。"
+    },
+    {
+      "id": "self_04",
+      "position": 34,
+      "dimension": "self",
+      "text": "两个机会都不错却不能兼顾时，我会先对照自己这个阶段最想完成的事。",
+      "reverse": false,
+      "facet": "优先取舍",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "明确价值排序，而不是泛指做决定时会分析。"
+    },
+    {
+      "id": "nature_04",
+      "position": 35,
+      "dimension": "nature",
+      "text": "在安全距离看到动物活动时，我会停下来留意它接下来做什么。",
+      "reverse": false,
+      "facet": "行为观察",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "观察生命行为，不把动物喜爱或照护资格作为计分依据。"
+    },
+    {
+      "id": "action_04",
+      "position": 36,
+      "dimension": "action",
+      "text": "使用一种不熟悉的材料时，我会先做个小样，感受它在操作时的表现。",
+      "reverse": false,
+      "facet": "材料适配",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "具体到材料与操作，而不是所有职业原型尝试。"
+    },
+    {
+      "id": "sound_04",
+      "position": 37,
+      "dimension": "sound",
+      "text": "音乐里几个声音同时出现时，我会试着单独跟住其中一条声音。",
+      "reverse": false,
+      "facet": "层次分辨",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "听觉分层与声音制作知识区分。"
+    },
+    {
+      "id": "space_04",
+      "position": 38,
+      "dimension": "space",
+      "text": "准备把东西放进盒子或架子时，我会先比较它们的长宽高关系。",
+      "reverse": false,
+      "facet": "尺寸关系",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "实际比例关系，不评价构图或字体比例。"
+    },
+    {
+      "id": "visual_04",
+      "position": 39,
+      "dimension": "visual",
+      "text": "看一组图片时，我会注意其中哪一张在颜色或画面风格上显得不属于这一组。",
+      "reverse": false,
+      "facet": "风格一致",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "平面风格一致性，不以空间结构或原创性计分。"
+    },
+    {
+      "id": "create_04",
+      "position": 40,
+      "dimension": "create",
+      "text": "可用的材料不够时，我会尝试换一种形式实现原来的目的。",
+      "reverse": false,
+      "facet": "限制改写",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "关注形式替代，不测材料操作水平。"
+    },
+    {
+      "id": "reason_05",
+      "position": 41,
+      "dimension": "reason",
+      "text": "两个来源给出不同结论时，我会查看它们用的例子或数据是否来自相同条件。",
+      "reverse": false,
+      "facet": "依据核对",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "关注证据口径，避免泛泛询问是否喜欢分析。"
+    },
+    {
+      "id": "language_05",
+      "position": 42,
+      "dimension": "language",
+      "text": "解释抽象说法时，我会用一个日常小例子来代替继续重复原话。",
+      "reverse": false,
+      "facet": "例子转译",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "只观察例子转译，不将所有新联想归为语言优势。"
+    },
+    {
+      "id": "people_05",
+      "position": 43,
+      "dimension": "people",
+      "text": "一个人的表现和我最初的印象不一样时，我会再了解几次，而不是沿用原来的判断。",
+      "reverse": false,
+      "facet": "印象修正",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "用判断更新观察关系理解，不以受欢迎程度计分。"
+    },
+    {
+      "id": "self_05",
+      "position": 44,
+      "dimension": "self",
+      "text": "收到不同建议时，我会先想它们分别适用于自己什么情况下，再决定采纳哪一条。",
+      "reverse": false,
+      "facet": "反馈筛选",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "限定为个人经验适配，不泛测求证能力。"
+    },
+    {
+      "id": "nature_05",
+      "position": 45,
+      "dimension": "nature",
+      "text": "天气或季节变化后，我会留意熟悉地点的植物或动物出现了哪些不同。",
+      "reverse": false,
+      "facet": "变化对照",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "区分自然变化注意与自身情绪恢复。"
+    },
+    {
+      "id": "action_05",
+      "position": 46,
+      "dimension": "action",
+      "text": "看过别人演示一个简单操作后，我会自己跟做一遍，看看手上能否接得上。",
+      "reverse": false,
+      "facet": "手上复现",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "把动手路径偏好写清，不声称可测实际熟练度。"
+    },
+    {
+      "id": "sound_05",
+      "position": 47,
+      "dimension": "sound",
+      "text": "听到同一段话的不同朗读版本时，我会比较停顿位置怎样改变整体节奏。",
+      "reverse": false,
+      "facet": "停顿比较",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "声音节奏与文字内容组织分开。"
+    },
+    {
+      "id": "space_05",
+      "position": 48,
+      "dimension": "space",
+      "text": "看一张简单场景图时，我会想象从另一边看，物体的前后关系会怎样改变。",
+      "reverse": false,
+      "facet": "视角切换",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "用视点转换划开空间与视觉审美边界。"
+    },
+    {
+      "id": "visual_05",
+      "position": 49,
+      "dimension": "visual",
+      "text": "整理一张卡片或一页文档时，我会调整文字间距，让画面看起来更有秩序。",
+      "reverse": false,
+      "facet": "视觉修订",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "仅测视觉调整行为，不混入作品是否有创意。"
+    },
+    {
+      "id": "create_05",
+      "position": 50,
+      "dimension": "create",
+      "text": "看到一个普通物品时，我有时会想到它原本用途之外的用法。",
+      "reverse": false,
+      "facet": "用途变换",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "日常用途发散，不把是否开展实验混为创意生成。"
+    }
+  ],
+  "editorial_notes": {
+    "facet_labels": "仅用于审稿与报告生成，不在答题界面显示。",
+    "response_scale": "沿用1—5分五档符合度。场景题减少抽象自夸措辞，不代表已经证明能够消除社会赞许偏差。",
+    "no_reverse_items": "本轮不为制造区分度添加绕口反向题；仍采用正向计分。",
+    "opportunity_note": "未接触过的场景可能影响回答；一般／暂不确定不能解释为能力中等。"
+  }
+}
