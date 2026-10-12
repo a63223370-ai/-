@@ -1,11 +1,13 @@
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 const base='http://127.0.0.1:8787';
-const bank=JSON.parse(readFileSync('lib/content/questions.json','utf8')).questions;
+const questionnaire=JSON.parse(readFileSync('lib/content/questions.json','utf8'));
+const bank=questionnaire.questions;
 const call=async(path,method='GET',data,cookie='')=>{const r=await fetch(base+path,{method,headers:{'Content-Type':'application/json',...(cookie?{Cookie:cookie}:{})},...(data?{body:JSON.stringify(data)}:{})});return {code:r.status,cookie:r.headers.get('set-cookie')?.split(';')[0],data:await r.json()};};
-assert.deepEqual((await call('/api/explore')).data,{status:'ready'});
+assert.deepEqual((await call('/api/explore')).data,{status:'ready',requiresInvitation:false});
 const started=await call('/api/explore','POST');
 assert.equal(started.code,200);assert.equal(started.data.status,'active');
+assert.equal(started.data.questionnaireVersion,questionnaire.version);
 assert.match(started.data.token,/^[a-f0-9]{64}$/);assert(started.cookie);
 const token=started.data.token,cookie=started.cookie,path='/api/invitations/'+token;
 const saved=await call(path,'POST',{action:'save',version:started.data.version,answers:{[bank[0].id]:4}});
@@ -15,6 +17,7 @@ assert.equal(restored.data.token,token);assert.equal(restored.data.answers[bank[
 assert.equal((await call('/api/explore','POST',undefined,cookie)).data.token,token);
 const answers=Object.fromEntries(bank.map((q,i)=>[q.id,i%5+1]));
 const completed=await call(path,'POST',{action:'submit',version:saved.data.version,answers});assert.equal(completed.code,200);
+assert.equal(completed.data.report.version,questionnaire.version);
 assert.deepEqual((await call('/api/explore','GET',undefined,cookie)).data.report,completed.data.report);
 assert.deepEqual((await call('/api/explore','POST',undefined,cookie)).data.report,completed.data.report);
 const fresh=await call('/api/explore','POST');assert.notEqual(fresh.data.token,token);

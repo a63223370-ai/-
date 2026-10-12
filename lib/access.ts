@@ -1,8 +1,9 @@
 import { env } from 'cloudflare:workers';
-import { makeReport, validateAnswers, VERSION } from './engine';
+import { makeReport, validateAnswers, supportsQuestionnaire } from './engine';
 
 type Row={token:string;created_at:number;starts_at:number|null;expires_at:number|null;completed_at:number|null;status:string;answers:string;nickname:string;version:number;questionnaire_version:string;report:string|null};
-const bindings=()=>env as unknown as {DB:D1Database;ADMIN_KEY?:string};
+const bindings=()=>env as unknown as {DB:D1Database;ADMIN_KEY?:string;ALLOW_PUBLIC_EXPLORE?:string};
+export function publicExplorationEnabled(){return bindings().ALLOW_PUBLIC_EXPLORE==='true';}
 export function db(){const database=bindings().DB;if(!database)throw new Error('存储服务暂不可用');return database;}
 export function response(data:unknown,status=200){return Response.json(data,{status,headers:{'Cache-Control':'private, no-store','Referrer-Policy':'no-referrer','X-Content-Type-Options':'nosniff'}});}
 export async function authorized(request:Request){
@@ -25,7 +26,7 @@ export async function updateInvitation(request:Request,token:string){
   if(!row)return response({error:'专属链接不存在，请核对购买后收到的完整链接。'},404);
   if(row.status==='completed')return response(view(row));
   if(row.status==='revoked')return response({error:'此链接已停用。',state:view(row)},410);
-  if(row.questionnaire_version!==VERSION)return response({error:'题库版本不一致，请联系店铺处理。'},409);
+  if(!supportsQuestionnaire(row.questionnaire_version))return response({error:'题库版本不一致，请联系店铺处理。'},409);
   const now=Date.now();
   if(row.expires_at&&now>=row.expires_at)return response({error:'24小时答题时间已结束。',state:view(row)},410);
   if(input.action==='start'){
@@ -45,7 +46,7 @@ export async function updateInvitation(request:Request,token:string){
   if(input.action==='submit'){
     const hash=new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(token)));
     const reportId='PC-'+Array.from(hash.slice(0,6),b=>b.toString(16).padStart(2,'0')).join('').toUpperCase();
-    const report=makeReport(input.answers,nickname,reportId,now);
+    const report=makeReport(input.answers,nickname,reportId,now,row.questionnaire_version);
     const changed=await db().prepare("UPDATE invitations SET status='completed',answers=?,nickname=?,report=?,completed_at=?,version=version+1 WHERE token=? AND version=? AND status='active' AND expires_at>?")
       .bind(JSON.stringify(input.answers),nickname,JSON.stringify(report),now,token,row.version,now).run();
     const latest=(await getRow(token))!;

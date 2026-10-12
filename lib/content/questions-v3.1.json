@@ -1,0 +1,576 @@
+{
+  "version": "3.1.0",
+  "instructions": "请根据近半年的真实经历，判断题目中的描述是否符合自己。不必按理想中的自己作答。没有相关经历，或暂时无法判断时，可以选择“我不确定”，按中性回答记录，不代表能力一般。所有选项都可以，没有需要争取的高分。",
+  "options": [
+    {
+      "value": 1,
+      "label": "很不符合"
+    },
+    {
+      "value": 2,
+      "label": "不太符合"
+    },
+    {
+      "value": 3,
+      "label": "我不确定"
+    },
+    {
+      "value": 4,
+      "label": "比较符合"
+    },
+    {
+      "value": 5,
+      "label": "很符合"
+    }
+  ],
+  "dimensions": [
+    {
+      "id": "reason",
+      "name": "结构推演"
+    },
+    {
+      "id": "language",
+      "name": "表达建构"
+    },
+    {
+      "id": "people",
+      "name": "关系洞察"
+    },
+    {
+      "id": "self",
+      "name": "自我导航"
+    },
+    {
+      "id": "nature",
+      "name": "生态觉察"
+    },
+    {
+      "id": "action",
+      "name": "实践协调"
+    },
+    {
+      "id": "sound",
+      "name": "声律敏感"
+    },
+    {
+      "id": "space",
+      "name": "空间组织"
+    },
+    {
+      "id": "visual",
+      "name": "视觉辨识"
+    },
+    {
+      "id": "create",
+      "name": "可能性生成"
+    }
+  ],
+  "questions": [
+    {
+      "id": "reason_01",
+      "position": 1,
+      "dimension": "reason",
+      "text": "比较两个方案时，我会看它们各自需要什么条件。",
+      "reverse": false,
+      "facet": "条件比较",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "language_01",
+      "position": 2,
+      "dimension": "language",
+      "text": "转述一段长消息时，我会先概括重点。",
+      "reverse": false,
+      "facet": "主线提炼",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "people_01",
+      "position": 3,
+      "dimension": "people",
+      "text": "一起做事有分歧时，我会了解每个人最在意什么。",
+      "reverse": false,
+      "facet": "期待确认",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "self_01",
+      "position": 4,
+      "dimension": "self",
+      "text": "答应别人之前，我会想清楚自己是否真的愿意。",
+      "reverse": false,
+      "facet": "动力辨认",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "nature_01",
+      "position": 5,
+      "dimension": "nature",
+      "text": "经过熟悉的路段时，我会注意树木最近有哪些变化。",
+      "reverse": false,
+      "facet": "持续观察",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "action_01",
+      "position": 6,
+      "dimension": "action",
+      "text": "组装一件小物品时，我会边试边熟悉操作。",
+      "reverse": false,
+      "facet": "操作反馈",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "sound_01",
+      "position": 7,
+      "dimension": "sound",
+      "text": "听熟悉的歌曲时，我会注意节拍的变化。",
+      "reverse": false,
+      "facet": "节奏注意",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "space_01",
+      "position": 8,
+      "dimension": "space",
+      "text": "搬动家具前，我会想象它转个方向后能否通过门口。",
+      "reverse": false,
+      "facet": "旋转想象",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "visual_01",
+      "position": 9,
+      "dimension": "visual",
+      "text": "浏览海报时，我会注意哪些设计最先吸引了视线。",
+      "reverse": false,
+      "facet": "视觉层级",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "create_01",
+      "position": 10,
+      "dimension": "create",
+      "text": "原来的办法行不通时，我会尝试另一种思路。",
+      "reverse": false,
+      "facet": "替代路径",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "reason_02",
+      "position": 11,
+      "dimension": "reason",
+      "text": "听到一条成功经验时，我会想它在哪些情况下不适用。",
+      "reverse": false,
+      "facet": "反例检验",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "language_02",
+      "position": 12,
+      "dimension": "language",
+      "text": "讲述一件复杂的事之前，我会先理清叙述顺序。",
+      "reverse": false,
+      "facet": "表达组织",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "people_02",
+      "position": 13,
+      "dimension": "people",
+      "text": "朋友向我倾诉时，我会确认他需要倾听还是建议。",
+      "reverse": false,
+      "facet": "需要核对",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "self_02",
+      "position": 14,
+      "dimension": "self",
+      "text": "一天结束后感到疲惫时，我会回想什么事最消耗自己。",
+      "reverse": false,
+      "facet": "状态辨认",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "nature_02",
+      "position": 15,
+      "dimension": "nature",
+      "text": "挑选水果时，我会留意同一品种在外形上的细微差别。",
+      "reverse": false,
+      "facet": "形态辨认",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "action_02",
+      "position": 16,
+      "dimension": "action",
+      "text": "切菜或做手工时，我会调整手势和力度，让动作更顺。",
+      "reverse": false,
+      "facet": "动作调整",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "sound_02",
+      "position": 17,
+      "dimension": "sound",
+      "text": "听不同的人读同一句话时，我会留意声音质感的区别。",
+      "reverse": false,
+      "facet": "音色辨别",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "space_02",
+      "position": 18,
+      "dimension": "space",
+      "text": "在商场看楼层地图时，我会把图上的位置对应到身边的店铺。",
+      "reverse": false,
+      "facet": "图物对应",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "visual_02",
+      "position": 19,
+      "dimension": "visual",
+      "text": "同一件物品换了颜色，我会注意整体感觉的变化。",
+      "reverse": false,
+      "facet": "配色感受",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "create_02",
+      "position": 20,
+      "dimension": "create",
+      "text": "学到一种新方法时，我会想到它还能用在哪些事情上。",
+      "reverse": false,
+      "facet": "跨域连接",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "reason_03",
+      "position": 21,
+      "dimension": "reason",
+      "text": "发现支出突然增加时，我会核对最近有哪些开销变化。",
+      "reverse": false,
+      "facet": "因果追问",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "language_03",
+      "position": 22,
+      "dimension": "language",
+      "text": "向不了解某个话题的人解释时，我会换成容易理解的词。",
+      "reverse": false,
+      "facet": "对象转换",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "people_03",
+      "position": 23,
+      "dimension": "people",
+      "text": "两个人对同一件事反应不同时，我会了解各自的经历。",
+      "reverse": false,
+      "facet": "立场辨别",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "self_03",
+      "position": 24,
+      "dimension": "self",
+      "text": "安排学习或工作时，我会参考自己在哪些时段更容易投入。",
+      "reverse": false,
+      "facet": "节奏复盘",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "nature_03",
+      "position": 25,
+      "dimension": "nature",
+      "text": "照料盆栽时，我会留意光照和水分对长势的影响。",
+      "reverse": false,
+      "facet": "环境联系",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "action_03",
+      "position": 26,
+      "dimension": "action",
+      "text": "学一个新动作时，我会把不顺的部分单独练习。",
+      "reverse": false,
+      "facet": "分段练习",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "sound_03",
+      "position": 27,
+      "dimension": "sound",
+      "text": "一段旋律听过几遍后，我能在脑中回想它的大致起伏。",
+      "reverse": false,
+      "facet": "旋律记忆",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "space_03",
+      "position": 28,
+      "dimension": "space",
+      "text": "收拾厨房或书桌时，我会按取用顺序安排物品的位置。",
+      "reverse": false,
+      "facet": "路径预演",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "visual_03",
+      "position": 29,
+      "dimension": "visual",
+      "text": "查看菜单或价目表时，我会注意排版是否方便找到信息。",
+      "reverse": false,
+      "facet": "排版辨识",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "create_03",
+      "position": 30,
+      "dimension": "create",
+      "text": "筹划一次活动时，我会想出几种安排再做选择。",
+      "reverse": false,
+      "facet": "多案生成",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "reason_04",
+      "position": 31,
+      "dimension": "reason",
+      "text": "设备出了小故障时，我会一次检查一个可能的原因。",
+      "reverse": false,
+      "facet": "逐项排查",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "language_04",
+      "position": 32,
+      "dimension": "language",
+      "text": "发送重要消息前，我会修改容易引起误解的句子。",
+      "reverse": false,
+      "facet": "歧义修订",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "people_04",
+      "position": 33,
+      "dimension": "people",
+      "text": "合作进展不顺时，我会确认双方对完成标准的理解是否一致。",
+      "reverse": false,
+      "facet": "合作澄清",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "self_04",
+      "position": 34,
+      "dimension": "self",
+      "text": "两个机会只能选一个时，我会看哪个更符合当前的目标。",
+      "reverse": false,
+      "facet": "优先取舍",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "nature_04",
+      "position": 35,
+      "dimension": "nature",
+      "text": "看到鸟或小动物时，我会留意它们正在做什么。",
+      "reverse": false,
+      "facet": "行为观察",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "action_04",
+      "position": 36,
+      "dimension": "action",
+      "text": "使用陌生的工具或材料时，我会先小范围试用，熟悉它的特性。",
+      "reverse": false,
+      "facet": "材料适配",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "sound_04",
+      "position": 37,
+      "dimension": "sound",
+      "text": "听音乐时，我能把注意力放在某一种乐器的声音上。",
+      "reverse": false,
+      "facet": "层次分辨",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "space_04",
+      "position": 38,
+      "dimension": "space",
+      "text": "收拾行李前，我会估计物品大小和箱内空间是否合适。",
+      "reverse": false,
+      "facet": "尺寸关系",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "visual_04",
+      "position": 39,
+      "dimension": "visual",
+      "text": "挑选一组照片时，我会留意哪些照片的画面风格不一致。",
+      "reverse": false,
+      "facet": "风格一致",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "create_04",
+      "position": 40,
+      "dimension": "create",
+      "text": "缺少原定材料时，我会寻找替代方式完成同一件事。",
+      "reverse": false,
+      "facet": "限制改写",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "reason_05",
+      "position": 41,
+      "dimension": "reason",
+      "text": "看到相互矛盾的测评结论时，我会核对它们的测试条件。",
+      "reverse": false,
+      "facet": "依据核对",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "language_05",
+      "position": 42,
+      "dimension": "language",
+      "text": "解释一个难懂的概念时，我会举生活中的例子。",
+      "reverse": false,
+      "facet": "例子转译",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "people_05",
+      "position": 43,
+      "dimension": "people",
+      "text": "发现一个人和初印象不同时，我会根据后续接触调整判断。",
+      "reverse": false,
+      "facet": "印象修正",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "self_05",
+      "position": 44,
+      "dimension": "self",
+      "text": "收到建议时，我会结合自己的实际情况决定是否采纳。",
+      "reverse": false,
+      "facet": "反馈筛选",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "nature_05",
+      "position": 45,
+      "dimension": "nature",
+      "text": "一场雨过后，我会留意附近积水、泥土或落叶的变化。",
+      "reverse": false,
+      "facet": "变化对照",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "action_05",
+      "position": 46,
+      "dimension": "action",
+      "text": "看过别人演示一个操作后，我会亲手做一遍。",
+      "reverse": false,
+      "facet": "手上复现",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "sound_05",
+      "position": 47,
+      "dimension": "sound",
+      "text": "听有声读物时，我会注意停顿怎样影响一句话的节奏。",
+      "reverse": false,
+      "facet": "停顿比较",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "space_05",
+      "position": 48,
+      "dimension": "space",
+      "text": "拍照选位置时，我会想象换个角度后，前后景会怎样变化。",
+      "reverse": false,
+      "facet": "视角切换",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "visual_05",
+      "position": 49,
+      "dimension": "visual",
+      "text": "制作一页文档时，我会调整间距和对齐，让页面更整齐。",
+      "reverse": false,
+      "facet": "视觉修订",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    },
+    {
+      "id": "create_05",
+      "position": 50,
+      "dimension": "create",
+      "text": "看到日常物品时，我会想到它在原本用途之外还能做什么。",
+      "reverse": false,
+      "facet": "用途变换",
+      "response_basis": "过去半年相似场景下的实际反应",
+      "revision_note": "3.1：简化句式，分散日常情境；保留原维度与观察侧面。"
+    }
+  ],
+  "editorial_notes": {
+    "facet_labels": "仅用于审稿与报告生成，不在答题界面显示。",
+    "response_scale": "1—5分五档回答；“我不确定”计3分，为中性占位，不表示能力中等，也不作为优势证据。",
+    "no_reverse_items": "本轮不为制造区分度添加绕口反向题；仍采用正向计分。",
+    "opportunity_note": "没有相关经历或暂时无法判断时选择“我不确定”。大量中性回答时，报告应保留不确定性。"
+  }
+}

@@ -1,4 +1,5 @@
 import { authorized, body, db, response, sameOrigin } from '@/lib/access';
+import { VERSION } from '@/lib/engine';
 export const dynamic='force-dynamic';
 export async function GET(request:Request){
   try{if(!await authorized(request))return response({error:'管理密钥不正确。'},401);
@@ -16,7 +17,14 @@ export async function POST(request:Request){
     const count=Number(input.count);
     if(!Number.isInteger(count)||count<1||count>100)return response({error:'每次可以生成1—100条。'},400);
     const now=Date.now(),tokens=Array.from({length:count},()=>{const b=crypto.getRandomValues(new Uint8Array(32));return Array.from(b,x=>x.toString(16).padStart(2,'0')).join('');});
-    await db().batch(tokens.map(token=>db().prepare('INSERT INTO invitations (token,created_at) VALUES (?,?)').bind(token,now)));
+    // Keep a 100-link batch within D1 Free's per-request query and bind limits.
+    const statements=[];
+    for(let offset=0;offset<tokens.length;offset+=25){
+      const chunk=tokens.slice(offset,offset+25);
+      statements.push(db().prepare('INSERT INTO invitations (token,created_at,questionnaire_version) VALUES '+chunk.map(()=>'(?,?,?)').join(','))
+        .bind(...chunk.flatMap(token=>[token,now,VERSION])));
+    }
+    await db().batch(statements);
     return response({tokens});
   }catch{return response({error:'操作没有完成，请刷新记录后再试。'},503);}
 }

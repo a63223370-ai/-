@@ -33,3 +33,21 @@
  .report-cover-art{height:auto;aspect-ratio:1000/560;margin:16px -24px 25px}.report-cover-art .ribbon-art{transform:none}
  .site-footer>.brand-mark{width:48px;height:auto}
 }
+
+/* Personal introduction comes before scores and dimensional analysis. */
+.personal-portrait{margin:0 0 72px;padding:48px;background:#f4f7ff;border:1px solid #e1e9fb;border-radius:24px;scroll-margin-top:90px}
+.portrait-kicker{margin:18px 0 12px;color:var(--blue);font-size:14px;font-weight:600}
+.personal-portrait h2{max-width:650px;font-size:36px;line-height:1.45;letter-spacing:-.025em}
+.portrait-intro{margin-top:24px;color:#47536a;font-size:17px;line-height:1.95}
+.portrait-qualities{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.portrait-qualities span{background:#fff;border:1px solid #dce6fa;border-radius:99px;padding:6px 14px;color:#214b9f;font-size:13px}
+.portrait-scenes{margin-top:32px;border-top:1px solid #dce5f6}
+.portrait-scenes article{display:flex;align-items:flex-start;gap:20px;padding:24px 0;border-bottom:1px solid #dce5f6}
+.portrait-scene-number{color:var(--blue);font:12px/1.8 Arial;letter-spacing:1px;padding-top:3px}
+.portrait-scenes h3{font-size:17px;font-weight:600;letter-spacing:0;margin-bottom:10px}
+.portrait-scenes p{font-size:15px;color:#536078;line-height:1.95}
+.portrait-closing{margin-top:28px;font-size:20px;line-height:1.75;font-weight:600}
+.portrait-note{font-size:11px;color:#7b8598;margin:20px 0 8px;line-height:1.8}
+.personal-portrait>.text-button{max-width:100%;text-align:left;justify-content:flex-start;line-height:1.7}
+@media(max-width:600px){.personal-portrait{padding:28px 22px;border-radius:18px;margin-bottom:48px}.personal-portrait h2{font-size:27px}.portrait-intro{font-size:15px;margin-top:18px}.portrait-scenes article{gap:13px;padding:22px 0}.portrait-scenes p{font-size:14px}.portrait-closing{font-size:18px}.portrait-qualities{gap:7px}.portrait-qualities span{font-size:12px;padding:5px 11px}}
+@media print{.personal-portrait{background:#fff;border-color:#ccc}.portrait-scenes article{break-inside:avoid}}

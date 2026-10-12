@@ -1,11 +1,20 @@
 import bank from './content/questions.json';
+import previousBank from './content/questions-v3.0.json';
+import revisionBank from './content/questions-v3.1.json';
 import libraryData from './content/library.json';
 
 export const questions=bank.questions;
 export const dimensions=libraryData.dimensions;
 export const library=libraryData;
 export const options=bank.options;
-export const VERSION='3.0.0';
+export const VERSION=bank.version;
+export function supportsQuestionnaire(version:string){return version===VERSION||version===previousBank.version||version===revisionBank.version;}
+export function questionnaireFor(version=VERSION){
+  if(version===previousBank.version)return previousBank;
+  if(version===revisionBank.version)return revisionBank;
+  if(version===VERSION)return bank;
+  throw new Error('题库版本不一致，请联系店铺处理。');
+}
 export type Answers=Record<string,number>;
 export type Scores=Record<string,number>;
 type Career=typeof library.careers[number];
@@ -54,10 +63,11 @@ export function selectCareers(scores:Scores,uniform=false):SelectedCareer[]{
   }
   return chosen;
 }
-export function makeReport(answers:Answers,nickname:string,id:string,createdAt=Date.now()):Report{
+export function makeReport(answers:Answers,nickname:string,id:string,createdAt=Date.now(),version=VERSION):Report{
+  questionnaireFor(version);
   const scores=scoreAnswers(answers),ranked=rankScores(scores),mode=getMode(scores,answers),pair=pairFor(ranked);
   const special=library.special_modes as unknown as Record<string, {name:string}>;
-  return {version:VERSION,id,nickname:nickname.trim().slice(0,24)||'探索者',createdAt,mode,name:mode==='regular'?pair.name:special[mode].name,scores,ranked,answers:{...answers},careers:selectCareers(scores,mode==='uniform')};
+  return {version,id,nickname:nickname.trim().slice(0,24)||'探索者',createdAt,mode,name:mode==='regular'?pair.name:special[mode].name,scores,ranked,answers:{...answers},careers:selectCareers(scores,mode==='uniform')};
 }
 export function readingFor(report:Report){
   const pair=pairFor(report.ranked),[a,b,c]=report.ranked;
@@ -68,9 +78,10 @@ export function readingFor(report:Report){
     order:report.scores[a]-report.scores[b]>=3?variants[a]:pair.balanced_variant,
     third:overlays[c].explanation,
     uncertain:Object.values(report.answers).filter(v=>v===3).length>=25,
+    uncertaintyNote:`你有较多题选择“${questionnaireFor(report.version).options[2].label}”。这些回答按中性记录，不表示能力一般，也不作为优势证据。可以通过实际体验，补充暂时无法判断的部分。`,
     tied:report.scores[a]===report.scores[b]||report.ranked.slice(3).some(d=>report.scores[d]===report.scores[c])};
 }
-export function evidenceFor(report:Report,dim:string){return questions.filter(q=>q.dimension===dim&&report.answers[q.id]>=4).sort((a,b)=>report.answers[b.id]-report.answers[a.id]||a.position-b.position).slice(0,2);}
+export function evidenceFor(report:Report,dim:string){return questionnaireFor(report.version).questions.filter(q=>q.dimension===dim&&report.answers[q.id]>=4).sort((a,b)=>report.answers[b.id]-report.answers[a.id]||a.position-b.position).slice(0,2);}
 export function planFor(report:Report,career:SelectedCareer){
   const relevant=Object.entries(career.weights).sort(([ka,wa],[kb,wb])=>report.scores[kb]*Number(wb)-report.scores[ka]*Number(wa)||ka.localeCompare(kb)).slice(0,2).map(([k])=>k);
   return {...career.seven_day_plan,bridge:report.mode==='uniform'?'先选一项感兴趣的任务，体验比急着定义自己更重要。':`这次观察${names[relevant[0]]}如何帮助你${contributions[relevant[0]]}，以及${names[relevant[1]]}如何帮助你${contributions[relevant[1]]}。`};

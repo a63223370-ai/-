@@ -1,0 +1,13 @@
+import {mkdirSync} from 'node:fs';
+import {spawnSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
+import path from 'node:path';
+const root=fileURLToPath(new URL('../',import.meta.url));
+const folder=path.join(root,'.sites-runtime','backups');
+mkdirSync(folder,{recursive:true});
+const output=path.join(folder,`invitations-${new Date().toISOString().replace(/[:.]/g,'-')}.sql`);
+const args=['--import','./scripts/sites-env.mjs','./node_modules/wrangler/bin/wrangler.js','d1','export','DB','--remote','--config','dist/server/wrangler.json','--table','invitations','--output',output];
+const result=spawnSync(process.execPath,args,{cwd:root,stdio:'inherit'});
+if(result.error)throw result.error;
+if(result.status!==0)process.exit(result.status??1);
+console.log('Backup saved:',output);

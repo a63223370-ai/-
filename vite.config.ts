@@ -15,6 +15,7 @@ const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === "seatbelt";
 const managedLinux = readExecutionProfile() === "managed-linux";
 
 const localBindingConfig = {
+  name: process.env.CLOUDFLARE_WORKER_NAME || "worker",
   main: "./build/sites-worker.ts",
   compatibility_flags: ["nodejs_compat"],
   d1_databases: d1
@@ -69,6 +70,10 @@ export default defineConfig(async ({ command }) => {
         inspectorPort: false,
         config: {
           ...localBindingConfig,
+          ...(command === "build" ? {
+            routes: [{ pattern: "lingmianlab.top", custom_domain: true }],
+            vars: { ALLOW_PUBLIC_EXPLORE: "false" },
+          } : {}),
           ...(command === "serve"
             ? {
                 services: [
